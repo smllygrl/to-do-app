@@ -11,3 +11,9 @@
 // -> takes you to home page
 
 // The Void is on the right
+
+const LogInPage = () => {
+  return <div>You see this page when you first access the site</div>;
+};
+
+export default LogInPage;
