@@ -1,10 +1,10 @@
-import "./App.css";
-import AdminPanel from "./containers/AdminPanel";
+// import "./App.css";
+import LogInPage from "./pages/LogInPage";
 
 function App() {
   return (
     <div>
-      <AdminPanel />
+      <LogInPage />
     </div>
   );
 }

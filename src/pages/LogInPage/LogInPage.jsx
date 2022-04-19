@@ -12,8 +12,15 @@
 
 // The Void is on the right
 
+import LogInSignUp from "../../containers/LogInSignUp";
+
 const LogInPage = () => {
-  return <div>You see this page when you first access the site</div>;
+  return (
+    <div>
+      <p>You see this page when you first access the site</p>
+      <LogInSignUp />
+    </div>
+  );
 };
 
 export default LogInPage;
