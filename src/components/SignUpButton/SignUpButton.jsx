@@ -4,3 +4,5 @@ const SignUpButton = () => {
 
   return <button>SIGN UP</button>;
 };
+
+export default SignUpButton;

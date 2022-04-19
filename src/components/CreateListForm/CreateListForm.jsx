@@ -5,3 +5,5 @@ const CreateListForm = () => {
     </form>
   );
 };
+
+export default CreateListForm;

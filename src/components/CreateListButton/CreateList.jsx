@@ -3,3 +3,5 @@ const CreateListButton = () => {
   // has props of createlist form
   return <button>CREATE</button>;
 };
+
+export default CreateListButton;

@@ -6,8 +6,10 @@ const LogInForm = () => {
   // make the password with astericks if we have time/ can be bothered
   return (
     <form>
-      <input placeholder="USERNAME"> </input>
-      <input placeholder="PASSWORD"></input>
+      <input placeholder="Username"></input>
+      <input placeholder="Password"></input>
     </form>
   );
 };
+
+export default LogInForm;
