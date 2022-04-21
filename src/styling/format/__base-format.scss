@@ -1,0 +1,16 @@
+.baseFormat {
+  display: flex;
+
+  &__adminPanel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
