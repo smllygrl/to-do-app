@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  data-testid="login-1"
+>
+  <form
+    name="logIn"
+  >
+    <input
+      placeholder="Username"
+    />
+    <input
+      onChange={[Function]}
+      placeholder="Password"
+    />
+  </form>
+</div>
+`;

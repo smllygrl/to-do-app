@@ -18,13 +18,15 @@ const LogInForm = () => {
   };
 
   return (
-    <form name="logIn">
-      <input
-        placeholder="Username"
-        // onChange={handleUserChange()}
-      ></input>
-      <input placeholder="Password" onChange={handlePasswordChange}></input>
-    </form>
+    <div data-testid="login-1">
+      <form name="logIn">
+        <input
+          placeholder="Username"
+          // onChange={handleUserChange()}
+        ></input>
+        <input placeholder="Password" onChange={handlePasswordChange}></input>
+      </form>
+    </div>
   );
 };
 
