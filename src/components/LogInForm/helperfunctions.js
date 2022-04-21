@@ -23,8 +23,6 @@ export const checkLength = (password) => {
 };
 
 export const validCharacters = (str) => {
-  // as each character comes in, we want to know it is valid
-
   let strArr = str.split("");
 
   const regEx = /([A-Za-z0-9-_]){1}/;
