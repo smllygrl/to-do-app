@@ -1,27 +1,25 @@
-// SignUpButton
-// -> takes you to log in form
-//SignUpButton Form
-// CreateButton
-// -> creates a new user
-// -> takes you to home page
-
-//LogInButton
-// -> takes you to sign up page/ form
-// LogInForm
-// -> takes you to home page
-
-// The Void is on the right
-
-import LogInSignUp from "../../containers/LogInSignUp";
-import LogInDisplay from "../../containers/LogInDisplay";
+import LogInForm from "../../components/LogInForm";
+import LogInButton from "../../components/LogInButton";
+import SignUpButton from "../../components/SignUpButton";
+import BaseFormat from "../../styling/format/BaseFormat/BaseFormat";
 
 const LogInPage = () => {
   return (
-    <div>
-      <p>You see this page when you first access the site</p>
-      <LogInSignUp />
-      <LogInDisplay />
-    </div>
+    <BaseFormat
+      adminPanelContent={
+        <>
+          <p>Welcome</p>
+          <LogInForm />
+          <LogInButton buttonName={"LOG IN"} />
+          <SignUpButton />
+        </>
+      }
+      displayContent={
+        <>
+          <p>Sign up or Log in to make a to do list!!</p>
+        </>
+      }
+    ></BaseFormat>
   );
 };
 

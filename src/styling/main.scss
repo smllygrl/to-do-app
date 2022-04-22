@@ -1,1 +1,6 @@
-// import all component styling
+// import format styles
+@import "./format/BaseFormat/_base-format";
+@import "./format/SignUpFormat/_signup-format";
+
+// import component styles
+@import "../components/SignUpForm/_sign-up-form";
