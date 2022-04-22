@@ -21,20 +21,3 @@ export const checkLength = (password) => {
   console.log("Password must be between 5 and 12 digits");
   return false;
 };
-
-export const validCharacters = (str) => {
-  let strArr = str.split("");
-
-  const regEx = /([A-Za-z0-9-_]){1}/;
-
-  for (let i = 0; i < strArr.length; i++) {
-    if (strArr[i].match(regEx)) {
-      continue;
-    } else {
-      console.log("Can only contain A-Z, a-z, 0-9, -, _");
-      return false;
-    }
-  }
-  console.log(`${str} is valid`);
-  return true;
-};

@@ -1,12 +1,12 @@
 import {
   securePassword,
-  validCharacters,
   checkLength,
-} from "./helperfunctions";
+} from "../../helpers/validation/password/passwordHelp";
+
+import { validCharacters } from "../../helpers/validation/username/usernameHelp";
 
 const LogInForm = () => {
-  // This component only handles the user input and testing
-  // NOT SUBMIT TESTING
+  // INPUT TESTING NOT SUBMIT TESTING
 
   const handlePasswordChange = (event) => {
     let tempPswrd = event.target.value;
@@ -17,13 +17,15 @@ const LogInForm = () => {
     }
   };
 
+  const handleUserNameChange = (event) => {
+    let tempUserName = event.target.value;
+    validCharacters(tempUserName);
+  };
+
   return (
     <div data-testid="login-1">
       <form name="logIn">
-        <input
-          placeholder="Username"
-          // onChange={handleUserChange()}
-        ></input>
+        <input placeholder="Username" onChange={handleUserNameChange}></input>
         <input placeholder="Password" onChange={handlePasswordChange}></input>
       </form>
     </div>

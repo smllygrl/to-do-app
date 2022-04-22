@@ -1,6 +1,6 @@
 import UserGreeting from "../../components/UserGreeting";
 import LogOutButton from "../../components/LogOutButton";
-import CreateListButton from "../../components/CreateListButton/CreateListButton";
+import ToDoList from "../../components/ToDoList";
 import BaseFormat from "../../styling/format/BaseFormat/BaseFormat";
 
 const LoggedInPage = () => {
@@ -14,7 +14,7 @@ const LoggedInPage = () => {
       }
       displayContent={
         <>
-          <CreateListButton />
+          <ToDoList />
         </>
       }
     ></BaseFormat>
