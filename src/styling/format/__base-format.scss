@@ -1,16 +1,19 @@
 .baseFormat {
   display: flex;
+  border: 10px green solid;
 
   &__adminPanel {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border: 1px solid red;
   }
 
   &__display {
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 1px solid blue;
   }
 }
