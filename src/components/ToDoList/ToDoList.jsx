@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const ToDoList = () => {
   const [toDoList, setToDoList] = useState([]);
@@ -26,9 +26,18 @@ const ToDoList = () => {
     setToDoList([]);
   };
 
+  const handleEdit = (id) => {
+    const updatedList = toDoList.map((toDoitem) => {
+      if (toDoitem.id === id) {
+        console.log(toDoitem);
+      }
+    });
+    // modal with input for updated text??
+  };
+
   const handleDeleteItem = (id) => {
-    // go through toDoList and find id
-    // delete object
+    const updatedToDoList = toDoList.filter((toDoItem) => toDoItem.id !== id);
+    setToDoList(updatedToDoList);
   };
 
   return (
@@ -46,7 +55,8 @@ const ToDoList = () => {
         {toDoList.map((toDo) => (
           <div key={toDo.id}>
             <li>{toDo.text}</li>
-            <button onClick={handleDeleteItem}>x</button>
+            <button onClick={() => handleDeleteItem(toDo.id)}>x</button>
+            <button onClick={() => handleEdit(toDo.id)}>Edit</button>
           </div>
         ))}
       </ul>
