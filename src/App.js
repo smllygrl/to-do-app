@@ -1,7 +1,7 @@
 import LoggedInPage from "./pages/LoggedInPage/LoggedInPage";
 import LogInPage from "./pages/LogInPage";
 import SignUpPage from "./pages/SignUpPage/SignUpPage";
-import styles from "./styling/main.scss";
+import "./styling/main.scss";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 

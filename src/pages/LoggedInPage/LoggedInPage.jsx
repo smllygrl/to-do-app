@@ -1,3 +1,8 @@
+import UserGreeting from "../../components/UserGreeting";
+import LogOutButton from "../../components/LogOutButton";
+import CreateListButton from "../../components/CreateListButton/CreateListButton";
+import BaseFormat from "../../styling/format/BaseFormat/BaseFormat";
+
 const LoggedInPage = () => {
   // ADMIN PANEL:
   // user greeting
@@ -6,7 +11,21 @@ const LoggedInPage = () => {
   // DISPLAY:
   // CREATE button (new list)
 
-  return <div>This is the page you see when you're logged in</div>;
+  return (
+    <BaseFormat
+      adminPanelContent={
+        <>
+          <UserGreeting />
+          <LogOutButton />
+        </>
+      }
+      displayContent={
+        <>
+          <CreateListButton />
+        </>
+      }
+    ></BaseFormat>
+  );
 };
 
 export default LoggedInPage;

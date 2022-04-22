@@ -1,0 +1,16 @@
+.signUpForm {
+  border: 1px solid green;
+  padding: 10px;
+  margin: 20px;
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+  &__input {
+    padding: 10px;
+    margin: 10px;
+    border-style: solid;
+    border: 1px solid black;
+    border-radius: 7px;
+  }
+}
