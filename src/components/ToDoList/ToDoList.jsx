@@ -22,6 +22,15 @@ const ToDoList = () => {
     setToDo("");
   };
 
+  const handleClearAll = () => {
+    setToDoList([]);
+  };
+
+  const handleDeleteItem = (id) => {
+    // go through toDoList and find id
+    // delete object
+  };
+
   return (
     <div>
       <h3>To Do List</h3>
@@ -35,9 +44,13 @@ const ToDoList = () => {
       <button onClick={handleSubmit}>Add</button>
       <ul>
         {toDoList.map((toDo) => (
-          <li key={toDo.id}>{toDo.text}</li>
+          <div key={toDo.id}>
+            <li>{toDo.text}</li>
+            <button onClick={handleDeleteItem}>x</button>
+          </div>
         ))}
       </ul>
+      <button onClick={handleClearAll}>CLEAR ALL</button>
     </div>
   );
 };
