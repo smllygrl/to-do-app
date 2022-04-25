@@ -2,11 +2,12 @@ export const securePassword = (password) => {
   // password > pass****
   let passwordArr = password.split("");
   for (let i = 0; i < password.length; i++) {
-    if (i > 3) {
-      passwordArr[i] = "*";
-    }
+    // if (i > 3) {
+    passwordArr[i] = "*";
+    // }
   }
   let returnStr = passwordArr.join("");
+  console.log(returnStr);
 
   return returnStr;
   // does NOT render pass**** on front end
