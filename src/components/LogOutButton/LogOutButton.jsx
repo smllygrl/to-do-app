@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { DarkThemeContext } from "../../context/DarkModeContext/DarkThemeContext";
+import { DarkThemeContext } from "../../context/DarkThemeContext/DarkThemeContext";
 
 const LogOutButton = () => {
   // takes user to login/ sign up page

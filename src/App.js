@@ -4,7 +4,7 @@ import SignUpPage from "./pages/SignUpPage/SignUpPage";
 import "./styling/main.scss";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import DarkThemeProvider from "./context/DarkModeContext/DarkThemeContext";
+import DarkThemeProvider from "./context/DarkThemeContext/DarkThemeContext";
 
 function App() {
   return (

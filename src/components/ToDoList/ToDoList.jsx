@@ -1,8 +1,11 @@
 import { useState } from "react";
+import { useContext } from "react";
+import { DarkThemeContext } from "../../context/DarkThemeContext/DarkThemeContext";
 
 const ToDoList = () => {
   const [toDoList, setToDoList] = useState([]);
   const [toDo, setToDo] = useState("");
+  const { getClassName } = useContext(DarkThemeContext);
 
   const handleChange = (event) => {
     setToDo(event.target.value);
@@ -55,8 +58,18 @@ const ToDoList = () => {
         {toDoList.map((toDo) => (
           <div key={toDo.id}>
             <li>{toDo.text}</li>
-            <button onClick={() => handleDeleteItem(toDo.id)}>x</button>
-            <button onClick={() => handleEdit(toDo.id)}>Edit</button>
+            <button
+              className={getClassName("toDoForm__deleteItem")}
+              onClick={() => handleDeleteItem(toDo.id)}
+            >
+              x
+            </button>
+            <button
+              className={getClassName("toDoForm__editItem")}
+              onClick={() => handleEdit(toDo.id)}
+            >
+              Edit
+            </button>
           </div>
         ))}
       </ul>

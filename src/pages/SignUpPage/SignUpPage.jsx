@@ -1,17 +1,18 @@
 import SignUpForm from "../../components/SignUpForm";
 import LogInButton from "../../components/LogInButton";
-import SignUpFormat from "../../styling/formats/SignUpFormat/SignUpFormat";
+import BaseFormat from "../../styling/formats/BaseFormat/BaseFormat";
 
 const SignUpPage = () => {
   return (
-    <SignUpFormat
-      content={
+    <BaseFormat
+      adminPanelContent={
         <>
           <SignUpForm />
-          <LogInButton buttonName={"CREATE ACCOUNT"} />
+          <LogInButton buttonName={"SIGN UP"} />
         </>
       }
-    ></SignUpFormat>
+      displayContent=""
+    />
   );
 };
 

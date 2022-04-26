@@ -1,28 +1,26 @@
 .baseFormat {
-  display: flex;
-  align-items: center;
-  border: 10px green solid;
-  width: 90%;
-  height: 700px;
-  margin: 20px;
-  padding: 10px;
+  @include base-format;
+  @include base;
+  &--dark {
+    @include base-format;
+    @include dark-base;
+  }
 
   &__adminPanel {
-    width: 35%;
-    height: 650px;
-    border: 1px solid red;
-    padding: 10px;
-    margin: 10px;
+    @include base-format-admin;
+    @include base;
+    &--dark {
+      @include base-format-admin;
+      @include dark-base;
+    }
   }
 
   &__display {
-    width: 65%;
-    height: 650px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid blue;
-    padding: 10px;
-    margin: 10px;
+    @include base-format-display;
+    @include base;
+    &--dark {
+      @include base-format-display;
+      @include dark-base;
+    }
   }
 }
