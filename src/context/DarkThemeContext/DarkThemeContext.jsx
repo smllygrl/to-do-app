@@ -8,7 +8,9 @@ export const DarkThemeProvider = ({ children }) => {
   const getClassName = (className) => {
     if (darkMode === true) {
       return `${className}--dark`;
-    } else return className;
+    } else {
+      return className;
+    }
   };
 
   const value = { darkMode, setDarkMode, getClassName };

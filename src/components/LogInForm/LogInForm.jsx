@@ -12,9 +12,7 @@ const LogInForm = () => {
     let tempPswrd = event.target.value;
     validCharacters(tempPswrd);
     checkLength(tempPswrd);
-    if (tempPswrd.length >= 5) {
-      securePassword(tempPswrd);
-    }
+    securePassword(tempPswrd);
   };
 
   const handleUserNameChange = (event) => {
@@ -25,8 +23,18 @@ const LogInForm = () => {
   return (
     <div data-testid="login-1">
       <form name="logIn">
-        <input placeholder="Username" onChange={handleUserNameChange}></input>
-        <input placeholder="Password" onChange={handlePasswordChange}></input>
+        <label>
+          Username:
+          <input onChange={handleUserNameChange} />
+        </label>
+        <label>
+          Password:
+          <input
+            placeholder=""
+            onChange={handlePasswordChange}
+            type="password"
+          />
+        </label>
       </form>
     </div>
   );
