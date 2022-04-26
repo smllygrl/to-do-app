@@ -4,9 +4,7 @@
 
 // import component styles
 @import "../components/SignUpForm/_sign-up-form";
-
-
-// context (global state) 
+@import "../components/DarkModeButton/_dark-mode-button"; // context (global state) 
 // (darkMode ? className--dark : className)
 // signUpForm__button
 // normal styles

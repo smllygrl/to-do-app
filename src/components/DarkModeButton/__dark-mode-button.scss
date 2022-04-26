@@ -1,0 +1,8 @@
+.darkModeButton {
+  background-color: white;
+  color: green;
+  &--dark {
+    background-color: black;
+    color: gray;
+  }
+}

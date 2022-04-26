@@ -2,6 +2,7 @@ import LogInForm from "../../components/LogInForm";
 import LogInButton from "../../components/LogInButton";
 import SignUpButton from "../../components/SignUpButton";
 import BaseFormat from "../../styling/format/BaseFormat/BaseFormat";
+import DarkModeButton from "../../components/DarkModeButton/DarkModeButton";
 
 const LogInPage = () => {
   return (
@@ -12,6 +13,7 @@ const LogInPage = () => {
           <LogInForm />
           <LogInButton buttonName={"LOG IN"} />
           <SignUpButton />
+          <DarkModeButton />
         </>
       }
       displayContent={

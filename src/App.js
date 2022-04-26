@@ -4,18 +4,21 @@ import SignUpPage from "./pages/SignUpPage/SignUpPage";
 import "./styling/main.scss";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import DarkThemeProvider from "./context/DarkModeContext/DarkThemeContext";
 
 function App() {
   return (
-    <div>
-      <Router>
-        <Routes>
-          <Route path="/" element={<LogInPage />}></Route>
-          <Route path="/user" element={<LoggedInPage />}></Route>
-          <Route path="/signup" element={<SignUpPage />}></Route>
-        </Routes>
-      </Router>
-    </div>
+    <DarkThemeProvider>
+      <div>
+        <Router>
+          <Routes>
+            <Route path="/" element={<LogInPage />}></Route>
+            <Route path="/user" element={<LoggedInPage />}></Route>
+            <Route path="/signup" element={<SignUpPage />}></Route>
+          </Routes>
+        </Router>
+      </div>
+    </DarkThemeProvider>
   );
 }
 
