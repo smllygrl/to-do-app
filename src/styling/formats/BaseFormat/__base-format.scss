@@ -1,0 +1,26 @@
+.baseFormat {
+  @include base-format;
+  @include base;
+  &--dark {
+    @include base-format;
+    @include dark-base;
+  }
+
+  &__adminPanel {
+    @include base-format-admin;
+    @include base;
+    &--dark {
+      @include base-format-admin;
+      @include dark-base;
+    }
+  }
+
+  &__display {
+    @include base-format-display;
+    @include base;
+    &--dark {
+      @include base-format-display;
+      @include dark-base;
+    }
+  }
+}

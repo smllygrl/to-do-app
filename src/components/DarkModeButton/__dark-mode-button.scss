@@ -1,0 +1,8 @@
+.darkModeButton {
+  @include button;
+  @include button-format;
+  &--dark {
+    @include dark-button;
+    @include button-format;
+  }
+}

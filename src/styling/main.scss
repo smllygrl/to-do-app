@@ -1,6 +1,11 @@
+// import themes
+@import "./themes/_themes";
+
+// import format mixins
+@import "./formats/BaseFormat/format-mixin/_base-format-mixin";
+
 // import format styles
-@import "./format/BaseFormat/_base-format";
-@import "./format/SignUpFormat/_signup-format";
+@import "./formats/_formats";
 
 // import component styles
-@import "../components/SignUpForm/_sign-up-form";
+@import "../components/_components";

@@ -1,0 +1,5 @@
+@import "../../colours/_colours";
+@mixin dark-button {
+  background-color: $button-bg-dark;
+  color: $button-text-dark;
+}

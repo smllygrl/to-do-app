@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { DarkThemeContext } from "../../context/DarkThemeContext/DarkThemeContext";
 
 const SignUpButton = () => {
-  // has props of sign up form
-  // creates new user on click
+  const { getClassName } = useContext(DarkThemeContext);
+
+  let theClassName = getClassName("signUpButton");
 
   return (
     <Link to="/signup">
-      <button>SIGN UP</button>
+      <button className={theClassName}>SIGN UP</button>
     </Link>
   );
 };

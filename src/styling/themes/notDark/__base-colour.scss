@@ -1,0 +1,5 @@
+@import "../../colours/_colours";
+@mixin base {
+  background-color: $base-bg;
+  color: $base-text;
+}

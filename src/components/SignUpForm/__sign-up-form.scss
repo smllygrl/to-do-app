@@ -1,10 +1,18 @@
 .signUpForm {
-  border: 1px solid green;
-  padding: 10px;
-  margin: 20px;
+  @include base;
+  &--dark {
+    @include dark-base;
+  }
   &__form {
     display: flex;
     flex-direction: column;
+    @include base;
+    &--dark {
+      display: flex;
+      flex-direction: column;
+      // how do I not repeat format styling???
+      @include dark-base;
+    }
   }
   &__input {
     padding: 10px;
@@ -12,5 +20,14 @@
     border-style: solid;
     border: 1px solid black;
     border-radius: 7px;
+    @include base;
+    &--dark {
+      padding: 10px;
+      margin: 10px;
+      border-style: solid;
+      border: 1px solid black;
+      border-radius: 7px;
+      @include dark-base;
+    }
   }
 }

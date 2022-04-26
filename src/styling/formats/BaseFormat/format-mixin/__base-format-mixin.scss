@@ -1,0 +1,26 @@
+@mixin base-format {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  height: 700px;
+  margin: 20px;
+  padding: 10px;
+}
+
+@mixin base-format-admin {
+  width: 35%;
+  height: 650px;
+  border-right: 1px solid black;
+  padding: 10px;
+  margin: 10px;
+}
+
+@mixin base-format-display {
+  width: 65%;
+  height: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin: 10px;
+}
