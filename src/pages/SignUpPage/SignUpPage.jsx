@@ -1,6 +1,6 @@
 import SignUpForm from "../../components/SignUpForm";
 import LogInButton from "../../components/LogInButton";
-import SignUpFormat from "../../styling/format/SignUpFormat";
+import SignUpFormat from "../../styling/formats/SignUpFormat/SignUpFormat";
 
 const SignUpPage = () => {
   return (

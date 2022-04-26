@@ -1,7 +1,7 @@
 import LogInForm from "../../components/LogInForm";
 import LogInButton from "../../components/LogInButton";
 import SignUpButton from "../../components/SignUpButton";
-import BaseFormat from "../../styling/format/BaseFormat/BaseFormat";
+import BaseFormat from "../../styling/formats/BaseFormat";
 import DarkModeButton from "../../components/DarkModeButton/DarkModeButton";
 
 const LogInPage = () => {

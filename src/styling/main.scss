@@ -1,11 +1,11 @@
 // import format styles
-@import "./format/BaseFormat/_base-format";
-@import "./format/SignUpFormat/_signup-format";
+@import "./formats/BaseFormat/_base-format";
+@import "./formats/SignUpFormat/_signup-format";
+@import "./formats/ButtonFormat/_button-format";
 
-// import mixins
-@import "./mixins/formats/_button-format";
-@import "./mixins/themes/dark/_button-colour-dark";
-@import "./mixins/themes/notDark/_button-colour";
+// import themes
+@import "./themes/dark/_button-colour-dark";
+@import "./themes/notDark/_button-colour";
 
 // import component styles
 @import "../components/SignUpForm/_sign-up-form";
