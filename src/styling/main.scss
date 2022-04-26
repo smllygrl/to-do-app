@@ -2,11 +2,14 @@
 @import "./format/BaseFormat/_base-format";
 @import "./format/SignUpFormat/_signup-format";
 
+// import mixins
+@import "./mixins/formats/_button-format";
+@import "./mixins/themes/dark/_button-colour-dark";
+@import "./mixins/themes/notDark/_button-colour";
+
 // import component styles
 @import "../components/SignUpForm/_sign-up-form";
-@import "../components/DarkModeButton/_dark-mode-button"; // context (global state) 
-// (darkMode ? className--dark : className)
-// signUpForm__button
-// normal styles
-// signUpForm__button--dark
-// darmode styles
+@import "../components/DarkModeButton/_dark-mode-button";
+@import "../components/LogInButton/_log-in-button";
+@import "../components/SignUpButton/_sign-up-button";
+@import "../components/LogOutButton/_logout-button";

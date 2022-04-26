@@ -11,12 +11,12 @@ const DarkModeButton = () => {
     setDarkMode(darkMode ? false : true);
   };
 
-  useEffect(() => {}, [darkMode]);
+  //   useEffect(() => {}, [darkMode]);
 
   return (
     <>
       <button onClick={handleClick} className={theClassName}>
-        DarkMode?
+        DARK MODE
       </button>
     </>
   );
