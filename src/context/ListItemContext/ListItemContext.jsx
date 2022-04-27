@@ -3,8 +3,11 @@ import { createContext, useState } from "react";
 export const ListItemContext = createContext();
 
 export const ListItemProvider = ({ children }) => {
+  const [toDoList, setToDoList] = useState([]);
+  const [toDo, setToDo] = useState("");
   const [editMode, setEditMode] = useState(false);
   const [update, setUpdate] = useState("");
+  const [liId, setLiId] = useState("");
 
   const toggle = (className) => {
     if (editMode === true) {
@@ -14,7 +17,24 @@ export const ListItemProvider = ({ children }) => {
     }
   };
 
-  const value = { toggle, editMode, setEditMode, update, setUpdate };
+  const updateListItem = (id, newContent) => {
+    toDoList[id].text = newContent;
+  };
+
+  const value = {
+    liId,
+    setLiId,
+    toggle,
+    editMode,
+    setEditMode,
+    update,
+    setUpdate,
+    toDoList,
+    setToDoList,
+    toDo,
+    setToDo,
+    updateListItem,
+  };
 
   return (
     <ListItemContext.Provider value={value}>

@@ -4,14 +4,22 @@ import { ListItemContext } from "../../context/ListItemContext/ListItemContext";
 
 const EditListItem = () => {
   const { getClassName } = useContext(DarkThemeContext);
-  const { toggle, editMode, setEditMode, update, setUpdate } =
-    useContext(ListItemContext);
+  const {
+    updateListItem,
+    liId,
+    toggle,
+    editMode,
+    setEditMode,
+    update,
+    setUpdate,
+  } = useContext(ListItemContext);
 
   useEffect(() => {}, [editMode]);
 
   const handleUpdate = () => {
-    console.log(update);
+    updateListItem(liId, update);
     setEditMode(false);
+    setUpdate("");
   };
 
   const handleChange = (event) => {

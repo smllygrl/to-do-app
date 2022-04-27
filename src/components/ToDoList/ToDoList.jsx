@@ -1,22 +1,12 @@
-import { useEffect, useState } from "react";
 import { useContext } from "react";
 import { DarkThemeContext } from "../../context/DarkThemeContext/DarkThemeContext";
 import { ListItemContext } from "../../context/ListItemContext/ListItemContext";
 import EditListItem from "../EditListItem/EditListItem";
 
 const ToDoList = () => {
-  const [toDoList, setToDoList] = useState([]);
-  const [toDo, setToDo] = useState("");
-  const { editMode, setEditMode, update, setUpdate } =
+  const { setLiId, setEditMode, toDoList, setToDoList, toDo, setToDo } =
     useContext(ListItemContext);
   const { getClassName } = useContext(DarkThemeContext);
-
-  // useEffect(() => {
-  //   const editInput = document.getElementById("edit");
-  //   editMode
-  //     ? (editInput.style.display = "inline")
-  //     : (editInput.style.display = "none");
-  // }, [editMode]);
 
   const handleChange = (event) => {
     setToDo(event.target.value);
@@ -41,11 +31,9 @@ const ToDoList = () => {
   };
 
   const handleEdit = (id) => {
+    const idProp = id - 1;
     setEditMode(true);
-  };
-
-  const handleUpdate = () => {
-    setEditMode(false);
+    setLiId(idProp);
   };
 
   const handleDeleteItem = (id) => {
@@ -74,10 +62,9 @@ const ToDoList = () => {
       </div>
       <div className={getClassName("toDoList__ulBox")}>
         <ul className={getClassName("toDoList__ul")}>
-          <EditListItem />
-
           {toDoList.map((toDo) => (
             <div className={getClassName("toDoList__itemBox")} key={toDo.id}>
+              <EditListItem />
               <li id="item" className={getClassName("toDoList__item")}>
                 {toDo.text}
               </li>
