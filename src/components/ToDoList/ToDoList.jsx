@@ -1,13 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useContext } from "react";
 import { DarkThemeContext } from "../../context/DarkThemeContext/DarkThemeContext";
+import { ListItemContext } from "../../context/ListItemContext/ListItemContext";
+import EditListItem from "../EditListItem/EditListItem";
 
 const ToDoList = () => {
   const [toDoList, setToDoList] = useState([]);
   const [toDo, setToDo] = useState("");
-  const [update, setUpdate] = useState("");
-  const [editMode, setEditMode] = useState(false);
+  const { editMode, setEditMode, update, setUpdate } =
+    useContext(ListItemContext);
   const { getClassName } = useContext(DarkThemeContext);
+
+  // useEffect(() => {
+  //   const editInput = document.getElementById("edit");
+  //   editMode
+  //     ? (editInput.style.display = "inline")
+  //     : (editInput.style.display = "none");
+  // }, [editMode]);
 
   const handleChange = (event) => {
     setToDo(event.target.value);
@@ -31,17 +40,11 @@ const ToDoList = () => {
     setToDoList([]);
   };
 
-  // const toggleHide = (index) => {
-  //   const itemToEdit = document.getElementsByClassName("toDoList__item");
-  //   const buttons = document.getElementsByClassName("toDoList__itemButtons");
-  //   itemToEdit.sty;
-  // };
-
   const handleEdit = (id) => {
     setEditMode(true);
   };
 
-  const handleUpdate = (newContent, id) => {
+  const handleUpdate = () => {
     setEditMode(false);
   };
 
@@ -71,16 +74,17 @@ const ToDoList = () => {
       </div>
       <div className={getClassName("toDoList__ulBox")}>
         <ul className={getClassName("toDoList__ul")}>
+          <EditListItem />
+
           {toDoList.map((toDo) => (
             <div className={getClassName("toDoList__itemBox")} key={toDo.id}>
-              <li className={getClassName("toDoList__item")}>{toDo.text}</li>
-              {/* EDIT/ UPDATE */}
-              <div className={getClassName("toDoList__updateItem")}>
-                <input></input>
-                <button onClick={handleUpdate}>UPDATE</button>
-              </div>
-              {/*  */}
-              <div className={getClassName("toDoList__itemButtons")}>
+              <li id="item" className={getClassName("toDoList__item")}>
+                {toDo.text}
+              </li>
+              <div
+                id="buttons"
+                className={getClassName("toDoList__itemButtons")}
+              >
                 <button
                   className={getClassName("toDoList__button")}
                   onClick={() => handleDeleteItem(toDo.id)}
