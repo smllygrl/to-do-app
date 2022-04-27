@@ -31,6 +31,7 @@ const ToDoList = () => {
   };
 
   const handleEdit = (id) => {
+    // handle some styling so that the user knows what is being editted
     const idProp = id - 1;
     setEditMode(true);
     setLiId(idProp);
@@ -62,9 +63,9 @@ const ToDoList = () => {
       </div>
       <div className={getClassName("toDoList__ulBox")}>
         <ul className={getClassName("toDoList__ul")}>
+          <EditListItem />
           {toDoList.map((toDo) => (
             <div className={getClassName("toDoList__itemBox")} key={toDo.id}>
-              <EditListItem />
               <li id="item" className={getClassName("toDoList__item")}>
                 {toDo.text}
               </li>

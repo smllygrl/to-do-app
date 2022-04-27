@@ -18,7 +18,11 @@ export const ListItemProvider = ({ children }) => {
   };
 
   const updateListItem = (id, newContent) => {
-    toDoList[id].text = newContent;
+    if (newContent != "") {
+      toDoList[id].text = newContent;
+    } else {
+      console.log("Add some content ya nuftie");
+    }
   };
 
   const value = {

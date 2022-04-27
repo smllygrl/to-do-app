@@ -26,9 +26,11 @@
   }
   &__itemBox {
     display: flex;
+    flex-wrap: wrap;
     border: black 1px solid;
     justify-content: space-between;
     align-items: center;
+    height: 80px;
   }
   &__item {
     list-style-type: none;
