@@ -1,0 +1,51 @@
+.toDoList {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  &__formBox {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__input {
+    width: 200px;
+  }
+  &__addBtnBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__ulBox {
+    display: flex;
+    padding-top: 7.5px;
+    padding-bottom: 7.5px;
+  }
+  &__ul {
+    margin: 0px;
+    padding: 0px;
+    width: 250px;
+  }
+  &__itemBox {
+    display: flex;
+    border: black 1px solid;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__item {
+    list-style-type: none;
+    padding: 5px;
+    // DISPLAY NONE WHEN EDIT
+  }
+  &__updateItem {
+    display: none;
+  }
+  &__itemButtons {
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid red;
+    // DISPLAY NONE WHEN EDIT
+  }
+  &__button {
+    background: none;
+    border: none;
+  }
+}
