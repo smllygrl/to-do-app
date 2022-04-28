@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { WeatherContext } from "../../context/WeatherContext/WeatherContext";
 import WeatherContent from "../WeatherContent/WeatherContent";
-import { validPostcode } from "../../helpers/validation/postcode/validPostcode";
+import { validPostcode } from "../../helpers/postcode/validPostcode";
 
 const WeatherWidget = () => {
   const {
@@ -32,9 +32,6 @@ const WeatherWidget = () => {
     <div>
       <input placeholder="Postcode" onChange={handleChange} />
       <button onClick={handleSubmit}>GET WEATHER</button>
-      <div>
-        <WeatherContent />
-      </div>
     </div>
   );
 };

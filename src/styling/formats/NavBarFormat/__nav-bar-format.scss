@@ -1,0 +1,8 @@
+@mixin nav-bar-format {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 1000px;
+  border-bottom: 1px solid black;
+}

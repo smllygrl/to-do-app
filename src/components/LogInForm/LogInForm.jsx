@@ -1,9 +1,9 @@
 import {
   securePassword,
   checkLength,
-} from "../../helpers/validation/password/passwordHelp";
+} from "../../helpers/password/passwordHelp";
 
-import { validCharacters } from "../../helpers/validation/username/usernameHelp";
+import { validCharacters } from "../../helpers/username/usernameHelp";
 
 const LogInForm = () => {
   // INPUT TESTING NOT SUBMIT TESTING

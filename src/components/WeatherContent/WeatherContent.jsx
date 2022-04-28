@@ -10,7 +10,7 @@ const WeatherContent = () => {
     // be invisible until postcode is valid
     <div>
       <p>
-        Temp at {name} is {weather}c.
+        {name} {weather}°
       </p>
       {/* <p>{description}</p> */}
     </div>

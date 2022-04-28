@@ -1,0 +1,6 @@
+.navBar {
+  @include nav-bar-format;
+  &--dark {
+    @include nav-bar-format;
+  }
+}
