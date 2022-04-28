@@ -4,15 +4,15 @@ import WeatherContent from "../WeatherContent/WeatherContent";
 import { validPostcode } from "../../helpers/validation/postcode/validPostcode";
 
 const WeatherWidget = () => {
-  const { postcode, setPostcode, setWeather } = useContext(WeatherContext);
-
-  const WEATHER_URL = `https://api.openweathermap.org/data/2.5/weather?zip=${postcode},au&appid=da85effc916513909a80249aae6bc673&units=metric`;
-  // const API_KEY = "da85effc916513909a80249aae6bc673";
-  // const COUNTRY_CODE = "AU";
-
-  // useEffect(() => {
-  //   fetch
-  // })
+  const {
+    getName,
+    postcode,
+    setPostcode,
+    getWeather,
+    getRawWeather,
+    getDescription,
+    description,
+  } = useContext(WeatherContext);
 
   const handleChange = (event) => {
     let tempPostcode = event.target.value;
@@ -21,20 +21,11 @@ const WeatherWidget = () => {
 
   const handleSubmit = () => {
     if (validPostcode(postcode)) {
-      callWeatherAPI();
+      getRawWeather();
+      getWeather();
+      getName();
+      getDescription();
     }
-
-    // async
-    // make api call
-    // clean data
-    // render temp
-    // maybe images depending on temp??
-  };
-
-  const callWeatherAPI = async () => {
-    fetch(WEATHER_URL)
-      .then((weatherResponse) => weatherResponse.json())
-      .then((json) => setWeather(json.main.temp));
   };
 
   return (

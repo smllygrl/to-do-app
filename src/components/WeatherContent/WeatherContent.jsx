@@ -1,15 +1,18 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { WeatherContext } from "../../context/WeatherContext/WeatherContext";
 
 const WeatherContent = () => {
-  const { weather, postcode } = useContext(WeatherContext);
+  const { weather, name, description } = useContext(WeatherContext);
 
-  useEffect(() => {}, [weather]);
+  // useEffect(() => {}, [weather]);
 
   return (
-    // be invisible until weather has a value
+    // be invisible until postcode is valid
     <div>
-      {postcode}:{weather}
+      <p>
+        Temp at {name} is {weather}c.
+      </p>
+      {/* <p>{description}</p> */}
     </div>
   );
 };
