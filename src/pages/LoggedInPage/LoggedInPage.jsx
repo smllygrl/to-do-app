@@ -1,17 +1,18 @@
 import UserGreeting from "../../components/UserGreeting";
 import LogOutButton from "../../components/LogOutButton";
 import ToDoList from "../../components/ToDoList";
-import DarkModeButton from "../../components/DarkModeButton";
 import BaseFormat from "../../styling/formats/BaseFormat";
+import NavBar from "../../components/NavBar";
+import Footer from "../../components/Footer";
 
 const LoggedInPage = () => {
   return (
     <BaseFormat
+      headerContent={<NavBar />}
       adminPanelContent={
         <>
           <UserGreeting />
           <LogOutButton />
-          <DarkModeButton />
         </>
       }
       displayContent={
@@ -19,6 +20,7 @@ const LoggedInPage = () => {
           <ToDoList />
         </>
       }
+      footerContent={<Footer />}
     ></BaseFormat>
   );
 };

@@ -1,21 +1,33 @@
 @mixin base-format {
   display: flex;
   align-items: center;
+  flex-direction: column;
   width: 90%;
-  height: 700px;
   margin: 20px;
   padding: 10px;
 }
 
+@mixin base-format-head {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin base-format-body {
+  display: flex;
+}
+
 @mixin base-format-admin {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
   width: 35%;
   height: 650px;
-  border-right: 1px solid black;
   padding: 10px;
   margin: 10px;
 }
 
 @mixin base-format-display {
+  border-left: 1px solid black;
   width: 65%;
   height: 650px;
   display: flex;
