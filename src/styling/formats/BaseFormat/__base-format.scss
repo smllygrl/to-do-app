@@ -6,6 +6,20 @@
     @include dark-base;
   }
 
+  &__header {
+    @include base-format-head;
+    &--dark {
+      @include base-format-head;
+    }
+  }
+
+  &__body {
+    @include base-format-body;
+    &--dark {
+      @include base-format-body;
+    }
+  }
+
   &__adminPanel {
     @include base-format-admin;
     @include base;
@@ -20,6 +34,13 @@
     @include base;
     &--dark {
       @include base-format-display;
+      @include dark-base;
+    }
+  }
+
+  &__footer {
+    @include base;
+    &--dark {
       @include dark-base;
     }
   }
