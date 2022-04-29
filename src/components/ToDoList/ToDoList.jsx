@@ -1,10 +1,11 @@
-import { useState } from "react";
 import { useContext } from "react";
 import { DarkThemeContext } from "../../context/DarkThemeContext/DarkThemeContext";
+import { ListItemContext } from "../../context/ListItemContext/ListItemContext";
+import EditListItem from "../EditListItem/EditListItem";
 
 const ToDoList = () => {
-  const [toDoList, setToDoList] = useState([]);
-  const [toDo, setToDo] = useState("");
+  const { setLiId, setEditMode, toDoList, setToDoList, toDo, setToDo } =
+    useContext(ListItemContext);
   const { getClassName } = useContext(DarkThemeContext);
 
   const handleChange = (event) => {
@@ -30,12 +31,10 @@ const ToDoList = () => {
   };
 
   const handleEdit = (id) => {
-    const updatedList = toDoList.map((toDoitem) => {
-      if (toDoitem.id === id) {
-        console.log(toDoitem);
-      }
-    });
-    // modal with input for updated text??
+    // handle some styling so that the user knows what is being editted
+    const idProp = id - 1;
+    setEditMode(true);
+    setLiId(idProp);
   };
 
   const handleDeleteItem = (id) => {
@@ -44,35 +43,56 @@ const ToDoList = () => {
   };
 
   return (
-    <div>
+    <div className={getClassName("toDoList")}>
       <h3>To Do List</h3>
-      <input
-        name="toDoItem"
-        type="text"
-        placeholder="Create a new 'to do' item!"
-        value={toDo}
-        onChange={handleChange}
-      />
-      <button onClick={handleSubmit}>Add</button>
-      <ul>
-        {toDoList.map((toDo) => (
-          <div key={toDo.id}>
-            <li>{toDo.text}</li>
-            <button
-              className={getClassName("toDoForm__deleteItem")}
-              onClick={() => handleDeleteItem(toDo.id)}
-            >
-              x
-            </button>
-            <button
-              className={getClassName("toDoForm__editItem")}
-              onClick={() => handleEdit(toDo.id)}
-            >
-              Edit
-            </button>
-          </div>
-        ))}
-      </ul>
+      <div className={getClassName("toDoList__formBox")}>
+        <input
+          className={getClassName("toDoList__input")}
+          name="toDoItem"
+          type="text"
+          placeholder="Create a new 'to do' item!"
+          value={toDo}
+          onChange={handleChange}
+        />
+        <button
+          onClick={handleSubmit}
+          className={getClassName("toDoList__addBtnBox")}
+        >
+          Add
+        </button>
+      </div>
+      <div className={getClassName("toDoList__ulBox")}>
+        <ul className={getClassName("toDoList__ul")}>
+          <EditListItem />
+          {toDoList.map((toDo) => (
+            <div className={getClassName("toDoList__itemBox")} key={toDo.id}>
+              <li id="item" className={getClassName("toDoList__item")}>
+                {toDo.text}
+              </li>
+              <div
+                id="buttons"
+                className={getClassName("toDoList__itemButtons")}
+              >
+                <button
+                  className={getClassName("toDoList__button")}
+                  onClick={() => handleDeleteItem(toDo.id)}
+                >
+                  X |
+                </button>
+                <button
+                  className={getClassName("toDoList__button")}
+                  onClick={() => handleEdit(toDo.id)}
+                >
+                  EDIT |
+                </button>
+                <button className={getClassName("toDoList__button")}>
+                  DONE
+                </button>
+              </div>
+            </div>
+          ))}
+        </ul>
+      </div>
       <button onClick={handleClearAll}>CLEAR ALL</button>
     </div>
   );
