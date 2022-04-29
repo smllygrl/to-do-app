@@ -7,28 +7,23 @@ import DarkThemeProvider from "./context/DarkThemeContext/DarkThemeContext";
 import WeatherProvider from "./context/WeatherContext/WeatherContext";
 import { ListItemProvider } from "./context/ListItemContext/ListItemContext";
 
-
 function App() {
   return (
     <DarkThemeProvider>
       <WeatherProvider>
-      <ListItemProvider>
-        <div>
-          <Router>
-            <Routes>
-              <Route path="/" element={<LogInPage />}></Route>
-
-              <Route path="/user" element={<LoggedInPage />}></Route>
-
-
-              <Route path="/user" element={<LoggedInPage />}></Route>
-
-              <Route path="/signup" element={<SignUpPage />}></Route>
-            </Routes>
-          </Router>
-        </div>
+        <ListItemProvider>
+          <div>
+            <Router>
+              <Routes>
+                <Route path="/" element={<LogInPage />}></Route>
+                <Route path="/user" element={<LoggedInPage />}></Route>
+                <Route path="/user" element={<LoggedInPage />}></Route>
+                <Route path="/signup" element={<SignUpPage />}></Route>
+              </Routes>
+            </Router>
+          </div>
+        </ListItemProvider>
       </WeatherProvider>
-      </ListItemProvider>
     </DarkThemeProvider>
   );
 }
