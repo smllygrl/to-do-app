@@ -1,0 +1,6 @@
+.editListItem {
+  display: none;
+  &--on {
+    display: block;
+  }
+}
